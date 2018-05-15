@@ -1,10 +1,3 @@
-#!/usr/bin/env python
-#______                 _       _ _   
-#░░░▒█ ▒█░▒█ ░█▀▀█ ▒█▄░▒█ 
-#░▄░▒█ ▒█░▒█ ▒█▄▄█ ▒█▒█▒█ 
-#▒█▄▄█ ░▀▄▄▀ ▒█░▒█ ▒█░░▀█ 
-
-
 from urllib2 import *
 from platform import system
 import sys
