@@ -63,7 +63,7 @@ def ext():
 
 def  select():
   try:
-    joker = input("\033[96mEnter \033[92m00/\033[91m18 => =>  ")
+    joker = input("\033[96mEnter \033[92m00/\033[91m8 => =>  ")
     if joker == 2:
       dz = raw_input('\033[91mEnter IP Address : \033[91m')
       whois = "http://api.hackertarget.com/whois/?q=" + dz
