@@ -1,0 +1,58 @@
+#!/bin/bash
+#
+#
+# author : JuaN 
+# Simple script for Install JXPloit
+#Colors
+cyan='\e[0;36m'
+green='\e[0;32m'
+lightgreen='\e[1;32m'
+white='\e[1;37m'
+red='\e[1;31m'
+yellow='\e[1;33m'
+blue='\e[1;34m'
+#Options
+path=`pwd` # Path
+VeR="V3.6" # Version
+#Check root exist
+[[ `id -u` -eq 0 ]] > /dev/null 2>&1 || { echo  $red "You must be root to run the script"; exit 1; }
+echo -e $cyan ""
+echo "──────────────────────────────────────────────────────────────────────────────────────────────────────────" ;
+echo "─────────██████─████████──████████─██████████████─██████─────────██████████████─██████████─██████████████─" ;
+echo "─────────██░░██─██░░░░██──██░░░░██─██░░░░░░░░░░██─██░░██─────────██░░░░░░░░░░██─██░░░░░░██─██░░░░░░░░░░██─" ;
+echo "─────────██░░██─████░░██──██░░████─██░░██████░░██─██░░██─────────██░░██████░░██─████░░████─██████░░██████─" ;
+echo "─────────██░░██───██░░░░██░░░░██───██░░██──██░░██─██░░██─────────██░░██──██░░██───██░░██───────██░░██─────" ;
+echo "─────────██░░██───████░░░░░░████───██░░██████░░██─██░░██─────────██░░██──██░░██───██░░██───────██░░██─────" ;
+echo "─────────██░░██─────██░░░░░░██─────██░░░░░░░░░░██─██░░██─────────██░░██──██░░██───██░░██───────██░░██─────" ;
+echo "─██████──██░░██───████░░░░░░████───██░░██████████─██░░██─────────██░░██──██░░██───██░░██───────██░░██─────" ;
+echo "─██░░██──██░░██───██░░░░██░░░░██───██░░██─────────██░░██─────────██░░██──██░░██───██░░██───────██░░██─────" ;
+echo "─██░░██████░░██─████░░██──██░░████─██░░██─────────██░░██████████─██░░██████░░██─████░░████─────██░░██─────" ;
+echo "─██░░░░░░░░░░██─██░░░░██──██░░░░██─██░░██─────────██░░░░░░░░░░██─██░░░░░░░░░░██─██░░░░░░██─────██░░██─────" ;
+echo "─██████████████─████████──████████─██████─────────██████████████─██████████████─██████████─────██████─────" ;
+echo "──────────────────────────────────────────────────────────────────────────────────────────────────────────" ;
+echo -e $white "------------------------------"
+echo -e $red "[ ✔ ] Installer The Tool [ ✔ ] "; 
+echo -e $white "------------------------------"
+echo -e $green "[ ! ] Moving JXPloit folder "
+mkdir /usr/share/JXPloit
+cp -r Dev /usr/share/JXPloit
+cp install /usr/share/JXPloit  
+cp update.py /usr/share/JXPloit
+cp -r modules /usr/share/JXPloit
+cp JXPloit.py /usr/share/JXPloit
+echo -e $blue "[ ✔ ]Done"
+echo -e $red "[*] Creating Icons Dirctory"
+cp -r $path/Dev/JXPloit.desktop /usr/share/applications/JXPloit.desktop
+cp -r $path/Dev/JXPloit.png /usr/share/icons/JXPloit.png
+echo -e $yellow "[*] Creating shortcut command $red JXPloit"
+echo "#!/bin/sh" >> /usr/bin/JXPloit  
+echo "cd /usr/share/JXPloit" >> /usr/bin/JXPloit  
+echo "exec python2 JXPloit.py \"\$@\"" >> /usr/bin/JXPloit  
+chmod +x /usr/bin/JXPloit  
+echo -e $white "------------------------------------------------------------------------"
+echo -e $red "[ ✔ ] JXPloit Is Installed In Application (information gathering) [ ✔ ]"
+echo -e $white "------------------------------------------------------------------------"
+echo -e $green"╔────────────────────────────╗ "
+echo -e $blue "|Run in Terminal<(JXPloit)> |  "
+echo -e $green"╚────────────────────────────╝ "
+exit
